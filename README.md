@@ -119,7 +119,7 @@ The time complexity of Bresenham algorithm is O(x2 – x1) and space complexity 
     
         Data processing and analysis(python, subject to change): Sally Xue, Xicheng Jiang
     
-        Presentation: Tianyue Yin
+        Presentation: Tianyue Yin, Xicheng Jiang
     
     
     
