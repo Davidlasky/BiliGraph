@@ -8,38 +8,18 @@
 #include <limits.h>
 #include <string>
 
-using std::string;
-
-typedef string Vertex;
-
-/**
- * Represents an edge in a graph; used by the Graph class.
- *
- * @author Sean Massung
- * @date Spring 2012
- */
+using namespace std;
 class Edge {
 public:
-  Vertex source; /**< The source of the edge **/
-  Vertex dest;   /**< The destination of the edge **/
+  string source; /**< The source of the edge **/
+  string dest;   /**< The destination of the edge **/
 
   /**
    * Parameter constructor for unweighted graphs.
    * @param u - one vertex the edge is connected to
    * @param v - the other vertex it is connected to
    */
-  Edge(Vertex u, Vertex v)
-      : source(u), dest(v), label(""), weight(-1) { /* nothing */
-  }
-
-  /**
-   * Parameter constructor for unweighted graphs.
-   * @param u - one vertex the edge is connected to
-   * @param v - the other vertex it is connected to
-   * @param lbl - the edge label
-   */
-  Edge(Vertex u, Vertex v, string lbl)
-      : source(u), dest(v), label(lbl), weight(-1) { /* nothing */
+  Edge(string u, string v) : source(u), dest(v), weight(-1.0) { /* nothing */
   }
 
   /**
@@ -47,16 +27,15 @@ public:
    * @param u - one vertex the edge is connected to
    * @param v - the other vertex it is connected to
    * @param w - the weight of the edge
-   * @param lbl - the edge label
    */
-  Edge(Vertex u, Vertex v, int w, string lbl)
-      : source(u), dest(v), label(lbl), weight(w) { /* nothing */
+  Edge(string u, string v, double w)
+      : source(u), dest(v), weight(w) { /* nothing */
   }
 
   /**
    * Default constructor.
    */
-  Edge() : source(""), dest(""), label(""), weight(-1) { /* nothing */
+  Edge() : source(""), dest(""), weight(-1) { /* nothing */
   }
 
   /**
@@ -68,14 +47,9 @@ public:
   bool operator<(const Edge &other) const { return weight < other.weight; }
 
   /**
-   * Gets edge label.
-   */
-  string getLabel() const { return this->label; }
-
-  /**
    * Gets edge weight.
    */
-  int getWeight() const { return this->weight; }
+  double getWeight() const { return this->weight; }
 
   /**
    * Compares two edges' source and dest.
@@ -90,6 +64,6 @@ public:
   }
 
 private:
-  string label; /**< The edge label **/
-  int weight;   /**< The edge weight (if in a weighed graph) **/
+  string author;
+  double weight;
 };
