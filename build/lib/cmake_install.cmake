@@ -1,4 +1,4 @@
-# Install script for directory: /workspaces/CS225/BiliGraph/lib
+# Install script for directory: /workspaces/CS225/Final/BiliGraph/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
