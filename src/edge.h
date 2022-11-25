@@ -26,15 +26,18 @@ public:
    * @param v - the other vertex it is connected to
    * @param w - the weight of the edge
    */
-  Edge(long u, long v, string label)
+  Edge(long u, long v, string video, long view, long like, long coin)
       : source(u), dest(v) { /* nothing */
-      labels.push_back(label);
+      videos.push_back(video);
+      views.push_back(view);
+      likes.push_back(like);
+      coins.push_back(coin);
   }
 
   /**
    * Default constructor.
    */
-  Edge() : source(0), dest(0), labels(labels) { /* nothing */
+  Edge() : source(0), dest(0), videos(), views(), likes(), coins() { /* nothing */
   }
 
   /**
@@ -43,12 +46,12 @@ public:
    * @param other - the edge to compare with
    * @return whether the current edge is less than the parameter
    */
-  bool operator<(const Edge &other) const { return labels.size() < other.labels.size(); }
+  bool operator<(const Edge &other) const { return videos.size() < other.videos.size(); }
 
   /**
    * Gets edge weight.
    */
-  double getWeight() const { return this->labels.size(); }
+  double getWeight() const { return this->videos.size(); }
 
 
   /**
@@ -58,8 +61,16 @@ public:
   bool operator==(Edge &other) const {
     if (this->source != other.source)
       return false;
-    if (this->dest != other.dest)
+    if (this->dest != other.dest){
       return false;
+    }
+    //?
+    for(unsigned int i = 0; i < videos.size(); i++){
+      if(this->videos.at(i) != other.videos.at(i)){
+        return false;
+      }
+    }
+
     return true;
   }
 
@@ -68,7 +79,11 @@ public:
 private:
   //string author;
   //double weight;
-  
+
   //BVID
-  vector<string> labels;
+  vector<string> videos;
+  vector<long> views;
+  vector<long> likes;
+  vector<long> coins;
+
 };
