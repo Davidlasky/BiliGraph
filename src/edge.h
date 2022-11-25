@@ -7,20 +7,18 @@
 
 #include <limits.h>
 #include <string>
+#include <vector>
 
 using namespace std;
 class Edge {
 public:
-  string source; /**< The source of the edge **/
-  string dest;   /**< The destination of the edge **/
+  //we use uploader's UID as source and destination
+  //BVID(video's ID that they cocreated) as label
 
-  /**
-   * Parameter constructor for unweighted graphs.
-   * @param u - one vertex the edge is connected to
-   * @param v - the other vertex it is connected to
-   */
-  Edge(string u, string v) : source(u), dest(v), weight(-1.0) { /* nothing */
-  }
+  long source; /**< The source of the edge **/
+  long dest;   /**< The destination of the edge **/
+
+
 
   /**
    * Parameter constructor for weighted graphs.
@@ -28,14 +26,15 @@ public:
    * @param v - the other vertex it is connected to
    * @param w - the weight of the edge
    */
-  Edge(string u, string v, double w)
-      : source(u), dest(v), weight(w) { /* nothing */
+  Edge(long u, long v, string label)
+      : source(u), dest(v) { /* nothing */
+      labels.push_back(label);
   }
 
   /**
    * Default constructor.
    */
-  Edge() : source(""), dest(""), weight(-1) { /* nothing */
+  Edge() : source(0), dest(0), labels(labels) { /* nothing */
   }
 
   /**
@@ -44,12 +43,13 @@ public:
    * @param other - the edge to compare with
    * @return whether the current edge is less than the parameter
    */
-  bool operator<(const Edge &other) const { return weight < other.weight; }
+  bool operator<(const Edge &other) const { return labels.size() < other.labels.size(); }
 
   /**
    * Gets edge weight.
    */
-  double getWeight() const { return this->weight; }
+  double getWeight() const { return this->labels.size(); }
+
 
   /**
    * Compares two edges' source and dest.
@@ -63,7 +63,12 @@ public:
     return true;
   }
 
+
+
 private:
-  string author;
-  double weight;
+  //string author;
+  //double weight;
+  
+  //BVID
+  vector<string> labels;
 };
