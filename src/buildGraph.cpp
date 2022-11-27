@@ -39,7 +39,7 @@ void buildGraph::insertVideo() {
   std::ifstream text(videoFile_);
   string lines;
   while (getline(text, lines)) {
-    vector<string> wholeline = SplitString(lines);
+    vector<string> wholeline = SplitString(lines, ',');
     vector<string> otherInfo;
     for (unsigned int i = 0; i < wholeline.size() - 1; i++) {
       otherInfo.push_back(wholeline.at(i));
@@ -48,7 +48,7 @@ void buildGraph::insertVideo() {
     string authorStr = wholeline.at(4);
     string authorTrim = authorStr.substr(2, authorStr.size() - 1);
 
-    vector<string> authorsStr = SplitString(authorTrim);
+    vector<string> authorsStr = SplitString(authorTrim, ';');
     vector<int> authors;
     for (unsigned int i = 0; i < authorsStr.size(); i++) {
       authors.push_back(stoi(authorsStr.at(i)));
