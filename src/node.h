@@ -4,12 +4,12 @@
 using namespace std;
 class Node {
 public:
-  string name;
+  int uid;
   double views;
   double likes;
   double coins;
   Node(vector<string> input)
-      : name(input[0]), views(stod(input[2])), likes(stod(input[3])),
+      : uid(stoi(input[0])), views(stod(input[2])), likes(stod(input[3])),
         coins(stod(input[4])) {
     /*author exist in authorData.csv, read line by line*/
   }

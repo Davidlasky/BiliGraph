@@ -20,7 +20,6 @@ void buildGraph::insertAuthor() {
   while (getline(text, lines)) {
     vector<string> line = SplitString(lines);
     bGraph.insertNode(line);
-    int a = 0;
     // flightMap_.insertNode(line);
   }
 }
