@@ -1,4 +1,4 @@
-/**
+/*
  * @file edge.h
  * Definition and (minimal) implementation of an edge class.
  */
@@ -26,12 +26,9 @@ public:
    * @param v - the other vertex it is connected to
    * @param w - the weight of the edge
    */
-  Edge(long u, long v, string video, long view, long like, long coin)
-      : source(u), dest(v) { /* nothing */
-      videos.push_back(video);
-      views.push_back(view);
-      likes.push_back(like);
-      coins.push_back(coin);
+  Edge(long u, long v, vector<string> videos_, vector<long> views_, vector<long> likes_, vector<long> coins_)
+      : source(u), dest(v), videos(videos_), views(views_), likes(likes_), coins(coins_) { /* nothing */
+
   }
 
   /**
@@ -87,3 +84,4 @@ private:
   vector<long> coins;
 
 };
+
