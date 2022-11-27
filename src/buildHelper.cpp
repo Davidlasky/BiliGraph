@@ -1,6 +1,9 @@
 #include "buildHelper.h"
 
-void buildHelper::insertNode(vector<string> line) { Node v(line); }
+void buildHelper::insertNode(vector<string> line) {
+  Node v(line);
+  uidToNode.insert(pair<int, Node>(v.uid, v));
+}
 
 void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
   int source;
