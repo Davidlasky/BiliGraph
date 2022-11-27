@@ -12,13 +12,11 @@
 using namespace std;
 class Edge {
 public:
-  //we use uploader's UID as source and destination
-  //BVID(video's ID that they cocreated) as label
+  // we use uploader's UID as source and destination
+  // BVID(video's ID that they cocreated) as label
 
-  long source; /**< The source of the edge **/
-  long dest;   /**< The destination of the edge **/
-
-
+  int source; /**< The source of the edge **/
+  int dest;   /**< The destination of the edge **/
 
   /**
    * Parameter constructor for weighted graphs.
@@ -26,15 +24,17 @@ public:
    * @param v - the other vertex it is connected to
    * @param w - the weight of the edge
    */
-  Edge(long u, long v, vector<string> videos_, vector<long> views_, vector<long> likes_, vector<long> coins_)
-      : source(u), dest(v), videos(videos_), views(views_), likes(likes_), coins(coins_) { /* nothing */
-
+  Edge(int u, int v, vector<string> videos_, vector<int> views_,
+       vector<int> likes_, vector<int> coins_)
+      : source(u), dest(v), videos(videos_), views(views_), likes(likes_),
+        coins(coins_) { /* nothing */
   }
 
   /**
    * Default constructor.
    */
-  Edge() : source(0), dest(0), videos(), views(), likes(), coins() { /* nothing */
+  Edge()
+      : source(0), dest(0), videos(), views(), likes(), coins() { /* nothing */
   }
 
   /**
@@ -43,13 +43,14 @@ public:
    * @param other - the edge to compare with
    * @return whether the current edge is less than the parameter
    */
-  bool operator<(const Edge &other) const { return videos.size() < other.videos.size(); }
+  bool operator<(const Edge &other) const {
+    return videos.size() < other.videos.size();
+  }
 
   /**
    * Gets edge weight.
    */
   double getWeight() const { return this->videos.size(); }
-
 
   /**
    * Compares two edges' source and dest.
@@ -58,12 +59,12 @@ public:
   bool operator==(Edge &other) const {
     if (this->source != other.source)
       return false;
-    if (this->dest != other.dest){
+    if (this->dest != other.dest) {
       return false;
     }
     //?
-    for(unsigned int i = 0; i < videos.size(); i++){
-      if(this->videos.at(i) != other.videos.at(i)){
+    for (unsigned int i = 0; i < videos.size(); i++) {
+      if (this->videos.at(i) != other.videos.at(i)) {
         return false;
       }
     }
@@ -71,17 +72,13 @@ public:
     return true;
   }
 
-
-
 private:
-  //string author;
-  //double weight;
+  // string author;
+  // double weight;
 
-  //BVID
+  // BVID
   vector<string> videos;
-  vector<long> views;
-  vector<long> likes;
-  vector<long> coins;
-
+  vector<int> views;
+  vector<int> likes;
+  vector<int> coins;
 };
-
