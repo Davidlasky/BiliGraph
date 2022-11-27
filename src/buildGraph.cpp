@@ -1,18 +1,24 @@
 #include "buildGraph.h"
+#include "buildHelper.h"
 
 using namespace std;
 
+buildGraph::buildGraph(const string &authorFile, const string &videoFile){
+    authorFile_ = authorFile;
+    videoFile_ = videoFile;
+    constructGraph();
+}
+
 void buildGraph::constructGraph(){
-    buildGraph bGraph;
-    bGraph.insertNode();
-    bGraph.insertEdge();
+    insertAuthor();
+    insertVideo();
 }
 
 
-void buildGraph::insertNode(){
+void buildGraph::insertAuthor(){
 
 }
 
-void buildGraph::insertEdge(){
+void buildGraph::insertVideo(){
 
 }
