@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <unordered_map>
 #include <vector>
 using namespace std;
 class Node {
@@ -8,6 +9,7 @@ public:
   double views;
   double likes;
   double coins;
+  unordered_map<int, Edge> neighbors; // key: neighbor uid, value: edge
   Node(vector<string> input)
       : uid(stoi(input[0])), views(stod(input[2])), likes(stod(input[3])),
         coins(stod(input[4])) {
