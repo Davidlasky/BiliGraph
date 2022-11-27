@@ -19,9 +19,9 @@ void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
         source = authors.at(i);
         dest = authors.at(j);
         videos.push_back(otherInfo.at(0));
-        views.push_back(std::stol(otherInfo.at(1)));
-        likes.push_back(std::stol(otherInfo.at(2)));
-        coins.push_back(std::stol(otherInfo.at(3)));
+        views.push_back(std::stoi(otherInfo.at(1)));
+        likes.push_back(std::stoi(otherInfo.at(2)));
+        coins.push_back(std::stoi(otherInfo.at(3)));
 
         Edge e(source, dest, videos, views, likes, coins);
       }

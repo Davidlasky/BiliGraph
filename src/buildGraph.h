@@ -20,5 +20,5 @@ private:
   string authorFile_;
   string videoFile_;
   buildHelper bGraph;
-  vector<string> buildGraph::SplitString(string &str1);
+  vector<string> buildGraph::SplitString(string &str1, char sep);
 };
