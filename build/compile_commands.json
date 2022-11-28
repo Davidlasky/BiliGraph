@@ -1,0 +1,27 @@
+[
+{
+  "directory": "/workspaces/CS225/BiliGraph/build",
+  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/test.cpp.o -c /workspaces/CS225/BiliGraph/tests/test.cpp",
+  "file": "/workspaces/CS225/BiliGraph/tests/test.cpp"
+},
+{
+  "directory": "/workspaces/CS225/BiliGraph/build",
+  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/main.dir/entry/main.cpp.o -c /workspaces/CS225/BiliGraph/entry/main.cpp",
+  "file": "/workspaces/CS225/BiliGraph/entry/main.cpp"
+},
+{
+  "directory": "/workspaces/CS225/BiliGraph/build/lib",
+  "command": "/usr/bin/clang++    -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/lodepng.dir/lodepng/lodepng.cpp.o -c /workspaces/CS225/BiliGraph/lib/lodepng/lodepng.cpp",
+  "file": "/workspaces/CS225/BiliGraph/lib/lodepng/lodepng.cpp"
+},
+{
+  "directory": "/workspaces/CS225/BiliGraph/build/lib",
+  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/HSLAPixel.cpp.o -c /workspaces/CS225/BiliGraph/lib/cs225/HSLAPixel.cpp",
+  "file": "/workspaces/CS225/BiliGraph/lib/cs225/HSLAPixel.cpp"
+},
+{
+  "directory": "/workspaces/CS225/BiliGraph/build/lib",
+  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/PNG.cpp.o -c /workspaces/CS225/BiliGraph/lib/cs225/PNG.cpp",
+  "file": "/workspaces/CS225/BiliGraph/lib/cs225/PNG.cpp"
+}
+]

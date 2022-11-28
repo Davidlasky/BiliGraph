@@ -1,6 +1,4 @@
+#include "../src/buildGraph.h"
 #include <iostream>
-#include "BiliGraph.cpp"
 
-int main() {
-   
-}
+int main() { buildGraph("data/authorData.csv", "data/test.csv"); }

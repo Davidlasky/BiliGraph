@@ -15,5 +15,5 @@ class buildHelper {
 public:
   void insertNode(vector<string> line);
   void insertEdge(vector<string> otherInfo, vector<int> authors);
-  map<int, Node> uidToNode; // link uid to node
+  map<int, node> uidToNode; // link uid to node
 };

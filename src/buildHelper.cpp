@@ -1,8 +1,8 @@
 #include "buildHelper.h"
 
 void buildHelper::insertNode(vector<string> line) {
-  Node v(line);
-  uidToNode.insert(pair<int, Node>(v.uid, v));
+  node v(line);
+  uidToNode.insert(pair<int, node>(v.uid, v));
 }
 
 void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
@@ -38,3 +38,4 @@ void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
       }
     }
   }
+}

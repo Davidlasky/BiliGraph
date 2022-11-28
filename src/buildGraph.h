@@ -1,4 +1,5 @@
 #pragma once
+#include "buildHelper.h"
 #include <cassert>
 #include <fstream>
 #include <iostream>
@@ -7,7 +8,6 @@
 #include <string>
 #include <utility>
 #include <vector>
-
 class buildGraph {
 public:
   buildGraph(const string &authorFile, const string &videoFile);
@@ -20,5 +20,5 @@ private:
   string authorFile_;
   string videoFile_;
   buildHelper bGraph;
-  vector<string> buildGraph::SplitString(string &str1, char sep);
+  vector<string> SplitString(string &str1, char sep);
 };
