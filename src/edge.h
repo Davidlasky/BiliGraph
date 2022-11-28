@@ -72,6 +72,22 @@ public:
     return true;
   }
 
+  void addVideo(string video){
+    videos.push_back(video);
+  }
+
+  void addViews(int view){
+    views.push_back(view);
+  }
+
+  void addLikes(int like){
+    likes.push_back(like);
+  }
+
+  void addCoins(int coin){
+    coins.push_back(coin);
+  }
+
 private:
   // string author;
   // double weight;
