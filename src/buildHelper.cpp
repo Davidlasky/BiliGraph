@@ -24,7 +24,17 @@ void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
         dest = authors.at(j);
 
         Edge e(source, dest, videos, views, likes, coins);
+
+        if (uidToNode[source].neighbors.find(dest) ==
+            uidToNode[source].neighbors.end()) {
+          uidToNode[source].neighbors.insert(pair<int, Edge>(dest, e));
+        } else {
+          Edge temp = uidToNode[source].neighbors[dest];
+          temp.addVideo(otherInfo.at(0));
+          temp.addViews(std::stoi(otherInfo.at(1)));
+          temp.addLikes(std::stoi(otherInfo.at(2)));
+          temp.addCoins(std::stoi(otherInfo.at(3)));
+        }
       }
     }
   }
-}
