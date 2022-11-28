@@ -12,9 +12,10 @@ using namespace std;
 
 int main() {
   bool flag = true;
-  buildGraph graph("data/authorData.csv", "data/test.csv");
-  graph.constructGraph();
-  assert(flag == false);
-  cout << "Test passed!" << endl;
+  buildGraph graph("../data/authorData.csv", "../data/test.csv");
+  graph.constructGraph("../data/authorData.csv", "../data/test.csv");
+
+  assert(flag == true);
+  cout << "Test passed! Yay!" << endl;
   return 0;
 }

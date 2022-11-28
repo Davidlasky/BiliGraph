@@ -1,26 +1,44 @@
 #include "buildGraph.h"
 #include "buildHelper.h"
+#include "sstream"
 
 using namespace std;
 
-buildGraph::buildGraph(const string &authorFile, const string &videoFile) {
+buildGraph::buildGraph(const string authorFile, const string videoFile) {
   authorFile_ = authorFile;
   videoFile_ = videoFile;
-  constructGraph();
+  constructGraph(authorFile, videoFile);
 }
 
-void buildGraph::constructGraph() {
-  insertAuthor();
-  insertVideo();
+std::string buildGraph::file_to_string(const std::string& filename){
+  std::ifstream text(filename);
+
+  std::stringstream strStream;
+  if (text.is_open()) {
+    strStream << text.rdbuf();
+  }
+  return strStream.str();
 }
 
-void buildGraph::insertAuthor() {
-  std::ifstream text(authorFile_);
-  string lines;
-  while (getline(text, lines)) {
+
+void buildGraph::constructGraph(const string &authorFile, const string &videoFile) {
+  insertAuthor(authorFile);
+  insertVideo(videoFile);
+}
+
+void buildGraph::insertAuthor(const string &authorFile) {
+  std::string temp = file_to_string(authorFile);
+  vector<string> lines = SplitString(temp, '\n');
+
+  for (string line: lines) {
+    vector<string> portion = SplitString(line, ',');
+    bGraph.insertNode(portion);
+  }
+/*
+  while (getline(temp, lines)) {
     vector<string> line = SplitString(lines, ',');
     bGraph.insertNode(line);
-  }
+  }*/
 }
 
 vector<string> buildGraph::SplitString(string &str1, char sep) {
@@ -35,8 +53,11 @@ vector<string> buildGraph::SplitString(string &str1, char sep) {
   return fields;
 }
 
-void buildGraph::insertVideo() {
-  std::ifstream text(videoFile_);
+
+
+
+void buildGraph::insertVideo(const string &videoFile) {
+  std::ifstream text(videoFile);
   string lines;
   while (getline(text, lines)) {
     vector<string> wholeline = SplitString(lines, ',');
