@@ -92,6 +92,7 @@ main_EXTERNAL_OBJECTS =
 
 main: CMakeFiles/main.dir/entry/main.cpp.o
 main: CMakeFiles/main.dir/build.make
+main: src/libsrc.a
 main: lib/libcs225.a
 main: lib/liblodepng.a
 main: CMakeFiles/main.dir/link.txt

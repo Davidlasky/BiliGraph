@@ -117,6 +117,92 @@ depend:
 	cd /workspaces/CS225/BiliGraph/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/CMakeFiles/src.dir/rule:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/src.dir/rule
+.PHONY : src/CMakeFiles/src.dir/rule
+
+# Convenience name for target.
+src: src/CMakeFiles/src.dir/rule
+.PHONY : src
+
+# fast build rule for target.
+src/fast:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/build
+.PHONY : src/fast
+
+bfs.o: bfs.cpp.o
+.PHONY : bfs.o
+
+# target to build an object file
+bfs.cpp.o:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.o
+.PHONY : bfs.cpp.o
+
+bfs.i: bfs.cpp.i
+.PHONY : bfs.i
+
+# target to preprocess a source file
+bfs.cpp.i:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.i
+.PHONY : bfs.cpp.i
+
+bfs.s: bfs.cpp.s
+.PHONY : bfs.s
+
+# target to generate assembly for a file
+bfs.cpp.s:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/bfs.cpp.s
+.PHONY : bfs.cpp.s
+
+buildGraph.o: buildGraph.cpp.o
+.PHONY : buildGraph.o
+
+# target to build an object file
+buildGraph.cpp.o:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/buildGraph.cpp.o
+.PHONY : buildGraph.cpp.o
+
+buildGraph.i: buildGraph.cpp.i
+.PHONY : buildGraph.i
+
+# target to preprocess a source file
+buildGraph.cpp.i:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/buildGraph.cpp.i
+.PHONY : buildGraph.cpp.i
+
+buildGraph.s: buildGraph.cpp.s
+.PHONY : buildGraph.s
+
+# target to generate assembly for a file
+buildGraph.cpp.s:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/buildGraph.cpp.s
+.PHONY : buildGraph.cpp.s
+
+buildHelper.o: buildHelper.cpp.o
+.PHONY : buildHelper.o
+
+# target to build an object file
+buildHelper.cpp.o:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/buildHelper.cpp.o
+.PHONY : buildHelper.cpp.o
+
+buildHelper.i: buildHelper.cpp.i
+.PHONY : buildHelper.i
+
+# target to preprocess a source file
+buildHelper.cpp.i:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/buildHelper.cpp.i
+.PHONY : buildHelper.cpp.i
+
+buildHelper.s: buildHelper.cpp.s
+.PHONY : buildHelper.s
+
+# target to generate assembly for a file
+buildHelper.cpp.s:
+	cd /workspaces/CS225/BiliGraph/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/src.dir/build.make src/CMakeFiles/src.dir/buildHelper.cpp.s
+.PHONY : buildHelper.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -125,6 +211,16 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... src"
+	@echo "... bfs.o"
+	@echo "... bfs.i"
+	@echo "... bfs.s"
+	@echo "... buildGraph.o"
+	@echo "... buildGraph.i"
+	@echo "... buildGraph.s"
+	@echo "... buildHelper.o"
+	@echo "... buildHelper.i"
+	@echo "... buildHelper.s"
 .PHONY : help
 
 

@@ -33,6 +33,18 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "/workspaces/CS225/BiliGraph/build/CMakeFiles/cmake.verify_globs")
 endif()
 
+# src_sources at src/CMakeLists.txt:4 (file)
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/CS225/BiliGraph/src/*.cpp")
+set(OLD_GLOB
+  "/workspaces/CS225/BiliGraph/src/bfs.cpp"
+  "/workspaces/CS225/BiliGraph/src/buildGraph.cpp"
+  "/workspaces/CS225/BiliGraph/src/buildHelper.cpp"
+  )
+if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
+  message("-- GLOB mismatch!")
+  file(TOUCH_NOCREATE "/workspaces/CS225/BiliGraph/build/CMakeFiles/cmake.verify_globs")
+endif()
+
 # tests_src at CMakeLists.txt:131 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/CS225/BiliGraph/tests/*.cpp")
 set(OLD_GLOB
