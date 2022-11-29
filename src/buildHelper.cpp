@@ -18,7 +18,7 @@ void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
   coins.push_back(std::stoi(otherInfo.at(3)));
 
   for (unsigned int i = 0; i < authors.size() - 1; i++) {
-    for (unsigned int j = 1; j < authors.size(); j++) {
+    for (unsigned int j = i+1; j < authors.size(); j++) {
       source = authors.at(i);
       dest = authors.at(j);
 
