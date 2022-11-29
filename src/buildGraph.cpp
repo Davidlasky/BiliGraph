@@ -8,7 +8,7 @@ buildGraph::buildGraph(const string authorFile, const string videoFile) {
   constructGraph(authorFile, videoFile);
 }
 
-std::string buildGraph::file_to_string(const std::string& filename){
+std::string buildGraph::file_to_string(const std::string &filename) {
   std::ifstream text(filename);
 
   std::stringstream strStream;
@@ -18,8 +18,8 @@ std::string buildGraph::file_to_string(const std::string& filename){
   return strStream.str();
 }
 
-
-void buildGraph::constructGraph(const string &authorFile, const string &videoFile) {
+void buildGraph::constructGraph(const string &authorFile,
+                                const string &videoFile) {
   insertAuthor(authorFile);
   insertVideo(videoFile);
 }
@@ -29,15 +29,18 @@ void buildGraph::insertAuthor(const string &authorFile) {
   vector<string> lines = SplitString(temp, '\n');
 
   for (unsigned int i = 1; i < lines.size(); i++) {
-    std::cout << "insertAuthor index:" << i << std::endl;
+    // std::cout << "insertAuthor index:" << i << std::endl;
     vector<string> portion = SplitString(lines[i], ',');
     bGraph.insertNode(portion);
+
+    // for test read file of authors
+    author_ckecklist.push_back(portion);
   }
-/*
-  while (getline(temp, lines)) {
-    vector<string> line = SplitString(lines, ',');
-    bGraph.insertNode(line);
-  }*/
+  /*
+    while (getline(temp, lines)) {
+      vector<string> line = SplitString(lines, ',');
+      bGraph.insertNode(line);
+    }*/
 }
 
 vector<string> buildGraph::SplitString(string &str1, char sep) {
@@ -52,16 +55,17 @@ vector<string> buildGraph::SplitString(string &str1, char sep) {
   return fields;
 }
 
-
-
-
 void buildGraph::insertVideo(const string &videoFile) {
   std::string temp = file_to_string(videoFile);
   vector<string> lines = SplitString(temp, '\n');
 
   for (unsigned int i = 1; i < lines.size(); i++) {
-    std::cout << "insertVideo index: " << i << std::endl;
+    // std::cout << "insertVideo index: " << i << std::endl;
     vector<string> wholeline = SplitString(lines[i], ',');
+
+    // for test read file of video
+    video_checklist.push_back(wholeline);
+
     vector<string> otherInfo;
     for (unsigned int i = 0; i < wholeline.size() - 1; i++) {
       otherInfo.push_back(wholeline.at(i));

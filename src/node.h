@@ -16,7 +16,7 @@ public:
     /*author exist in authorData.csv, read line by line*/
   }
   node() : uid(0), views(0), likes(0), coins(0) {
-    /* author doesn't exist in authorData.csv, use -1 for views,likes
+    /* author doesn't exist in authorData.csv, use 0 for views,likes
      * and coins.
      */
   }
