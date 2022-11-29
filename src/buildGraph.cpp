@@ -66,13 +66,6 @@ void buildGraph::insertVideo(const string &videoFile) {
     for (unsigned int i = 0; i < wholeline.size() - 1; i++) {
       otherInfo.push_back(wholeline.at(i));
     }
-    /*
-        while (getline(text, lines)) {
-          vector<string> wholeline = SplitString(lines, ',');
-          vector<string> otherInfo;
-          for (unsigned int i = 0; i < wholeline.size() - 1; i++) {
-            otherInfo.push_back(wholeline.at(i));
-          }*/
 
     string authorStr = wholeline.at(4);
     string authorTrim = authorStr.substr(2, authorStr.size() - 1);
