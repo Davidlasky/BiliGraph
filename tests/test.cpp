@@ -16,14 +16,10 @@
 using namespace std;
 
 int main() {
-  // test build pass
-  bool flag = true;
-  buildGraph graph("../data/authorData_small.csv", "../data/test_small.csv");
 
-  assert(flag == true);
-  cout << "Test passed! Yay!" << endl;
   /* TEST_CASE 1 Check file read*/
   // check authorlist read
+  cout << "---------Test 1 : Check file read---------" << std::endl;
   buildGraph checkRead("../data/testreadauthor.csv",
                        "../data/testReadVideo.csv");
 
@@ -44,6 +40,25 @@ int main() {
   assert(checkRead.video_checklist == correct_videolist);
   cout << "read same video list" << endl;
   cout << "read file test pass" << endl;
+
+
+
+
+   // TEST 2: correlation videos between two people
+  cout << "-------Test 2: Check correlated videos between 2 people-------" << std::endl;
+  buildGraph graph("../data/authorData_small.csv", "../data/test_small.csv");
+  vector<string> corrVideos = {"BV1HF411T7oV", "BV1eY411P7kW", "BV1XZ4y1y7du", "BV1mY4y1H7wp","BV1QT4y1e79k"};
+  assert(graph.bGraph.uidToNode[13354765].neighbors[7552204].getVideos() == corrVideos);
+  cout << "Correlation videos passed!!" << endl;
+  std::string output = "";
+  for(unsigned int i = 0; i < corrVideos.size(); i++){
+    output += corrVideos.at(i);
+    output += ",";
+  }
+  cout << "Videos are: " << output << std::endl;
+  cout << "----------------------" << std::endl;
+
+
 }
 
 /*

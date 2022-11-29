@@ -88,6 +88,10 @@ public:
     coins.push_back(coin);
   }
 
+  vector<string> getVideos(){
+    return videos;
+  }
+
 private:
   // string author;
   // double weight;

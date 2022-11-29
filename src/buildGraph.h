@@ -19,11 +19,12 @@ public:
   // for test
   vector<vector<string>> author_ckecklist;
   vector<vector<string>> video_checklist;
+  buildHelper bGraph;
 
 private:
   string authorFile_;
   string videoFile_;
-  buildHelper bGraph;
+  
   vector<string> SplitString(string &str1, char sep);
   std::string file_to_string(const std::string &filename);
 };
