@@ -5,8 +5,6 @@
 using namespace std;
 
 buildGraph::buildGraph(const string authorFile, const string videoFile) {
-  authorFile_ = authorFile;
-  videoFile_ = videoFile;
   constructGraph(authorFile, videoFile);
 }
 
