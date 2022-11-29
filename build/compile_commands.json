@@ -1,12 +1,12 @@
 [
 {
   "directory": "/workspaces/CS225/BiliGraph/build",
-  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/test.cpp.o -c /workspaces/CS225/BiliGraph/tests/test.cpp",
+  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/lib -I/workspaces/CS225/BiliGraph/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/test.dir/tests/test.cpp.o -c /workspaces/CS225/BiliGraph/tests/test.cpp",
   "file": "/workspaces/CS225/BiliGraph/tests/test.cpp"
 },
 {
   "directory": "/workspaces/CS225/BiliGraph/build",
-  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/main.dir/entry/main.cpp.o -c /workspaces/CS225/BiliGraph/entry/main.cpp",
+  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/lib -I/workspaces/CS225/BiliGraph/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/main.dir/entry/main.cpp.o -c /workspaces/CS225/BiliGraph/entry/main.cpp",
   "file": "/workspaces/CS225/BiliGraph/entry/main.cpp"
 },
 {
@@ -23,5 +23,20 @@
   "directory": "/workspaces/CS225/BiliGraph/build/lib",
   "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/lib  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/cs225.dir/cs225/PNG.cpp.o -c /workspaces/CS225/BiliGraph/lib/cs225/PNG.cpp",
   "file": "/workspaces/CS225/BiliGraph/lib/cs225/PNG.cpp"
+},
+{
+  "directory": "/workspaces/CS225/BiliGraph/build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/bfs.cpp.o -c /workspaces/CS225/BiliGraph/src/bfs.cpp",
+  "file": "/workspaces/CS225/BiliGraph/src/bfs.cpp"
+},
+{
+  "directory": "/workspaces/CS225/BiliGraph/build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/buildGraph.cpp.o -c /workspaces/CS225/BiliGraph/src/buildGraph.cpp",
+  "file": "/workspaces/CS225/BiliGraph/src/buildGraph.cpp"
+},
+{
+  "directory": "/workspaces/CS225/BiliGraph/build/src",
+  "command": "/usr/bin/clang++  -I/workspaces/CS225/BiliGraph/src  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -D_GLIBCXX_DEBUG -O0 -gdwarf-4 -std=gnu++17 -o CMakeFiles/src.dir/buildHelper.cpp.o -c /workspaces/CS225/BiliGraph/src/buildHelper.cpp",
+  "file": "/workspaces/CS225/BiliGraph/src/buildHelper.cpp"
 }
 ]

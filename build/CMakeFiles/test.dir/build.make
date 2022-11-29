@@ -93,6 +93,7 @@ test_EXTERNAL_OBJECTS =
 test: CMakeFiles/test.dir/tests/test.cpp.o
 test: CMakeFiles/test.dir/build.make
 test: /usr/lib/libCatch2Main.a
+test: src/libsrc.a
 test: /usr/lib/libCatch2.a
 test: lib/libcs225.a
 test: lib/liblodepng.a
