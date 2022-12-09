@@ -83,3 +83,41 @@ void buildGraph::insertVideo(const string &videoFile) {
     bGraph.insertEdge(otherInfo, authors);
   }
 }
+
+vector<int> buildGraph::BFS(int start) {
+  //  Mark all nodes as not visited
+  vector<bool> visited; //
+  for (bool tmp : visited) {
+    tmp = false;
+  }
+  //  initialize BFS
+  queue<int> airportQueue;  //  queue for BFS
+  queue<int> searchQueue;   //  order of nodes visited during BFS
+  airportQueue.push(start); //  enqueue first airport
+  searchQueue.push(start);
+  int curr = start; //  current node being visited
+
+  //  BFS
+  while (!airportQueue.empty()) {
+    curr = airportQueue.front();
+    for (auto it = bGraph.uidToNode[curr].neighbors.begin();
+         it != bGraph.uidToNode[curr].neighbors.end();
+         it++) {                     //  search all neighbours from current node
+      if (!visited[it->first]) {     //  next node has not been visited
+        searchQueue.push(it->first); //  add node to BFS search
+        airportQueue.push(it->first); //  enqueue next node
+        visited[it->first] = true;
+      }
+    }
+    airportQueue.pop();
+  }
+
+  //  tansfer queue to vecotr and return
+  vector<int> search;
+  while (!searchQueue.empty()) {
+    int ap = searchQueue.front();
+    search.push_back(ap);
+    searchQueue.pop();
+  }
+  return search;
+}

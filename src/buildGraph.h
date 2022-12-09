@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <map>
+#include <queue>
 #include <set>
 #include <string>
 #include <utility>
@@ -21,10 +22,13 @@ public:
   vector<vector<string>> video_checklist;
   buildHelper bGraph;
 
+  // BFS
+  vector<int> BFS(int start);
+
 private:
   string authorFile_;
   string videoFile_;
-  
+
   vector<string> SplitString(string &str1, char sep);
   std::string file_to_string(const std::string &filename);
 };
