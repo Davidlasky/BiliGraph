@@ -17,8 +17,12 @@ using namespace std;
 
 int main() {
 
+
+
   /* TEST_CASE 1 Check file read*/
   // check authorlist read
+
+  /*
   cout << "---------Test 1 : Check file read---------" << std::endl;
   buildGraph checkRead("../data/testreadauthor.csv",
                        "../data/testReadVideo.csv");
@@ -41,7 +45,7 @@ int main() {
   cout << "read same video list" << endl;
   cout << "read file test pass" << endl;
 
-
+*/
 
 
    // TEST 2: correlation videos between two people
@@ -56,7 +60,24 @@ int main() {
     output += ",";
   }
   cout << "Videos are: " << output << std::endl;
-  cout << "----------------------" << std::endl;
+
+
+  cout << "--------Test 3: Check 1 person's neighbor ----------" << std::endl;
+  std::vector<int> temp;
+  //std::string output = "";
+  auto neighbor_temp = graph.bGraph.uidToNode[454143774].neighbors;
+  std::for_each(neighbor_temp.begin(), neighbor_temp.end(), [&temp](const std::map<int, Edge>::value_type&p){
+    temp.push_back(p.first);
+  });
+  std::vector<int> correctVect = {32708543,304578055,1848018,350632501};
+  assert(temp == correctVect);
+
+  cout << "Check neighbor passed!" << std::endl;
+  cout << "----------------------------------------------------" << std::endl;
+
+
+  buildGraph wholeGraph("../data/authorData.csv", "../data/test.csv");
+  vector<vector<int>> bfs_mapping = wholeGraph.BFS();
 
 
 }

@@ -83,3 +83,64 @@ void buildGraph::insertVideo(const string &videoFile) {
     bGraph.insertEdge(otherInfo, authors);
   }
 }
+
+
+
+
+vector<vector<int>> buildGraph::BFS(){
+  //for all starting nodes, generate it's corresponding BFS traverse map
+
+  //fill it with all nodes initially
+  vector<int> nonVisited;
+
+  map<int, node> graphMap = bGraph.uidToNode;
+  for(const auto &myPair: graphMap){
+    nonVisited.push_back(myPair.first);
+  }
+
+
+  vector<vector<int>> maps;
+
+  while(!nonVisited.empty()) {
+    int seed = nonVisited.back();
+    nonVisited.pop_back();
+    maps.push_back(BFS_helper(seed, nonVisited));
+  }
+  //  BFS
+ 
+  //  tansfer queue to vecotr and return
+  return maps;
+}
+
+
+
+vector<int> buildGraph::BFS_helper(int start, vector<int>& nonVisited) {
+
+  //  initialize BFS
+  queue<int> authorQueue;  //  queue for BFS
+  authorQueue.push(start);
+  vector<int> map;
+  map.push_back(start);
+
+  while (!authorQueue.empty()) {
+    int curr = authorQueue.front();
+    for (auto it = bGraph.uidToNode[curr].neighbors.begin();
+        it != bGraph.uidToNode[curr].neighbors.end();
+         it++) {                     //  search all neighbours from current node
+
+      int curNode = it->first;
+      auto currFind = find(nonVisited.begin(), nonVisited.end(), curNode);
+      if (currFind != nonVisited.end()) {     //  next node has not been visited
+        //searchQueue.push(it->first); //  add node to BFS search
+        authorQueue.push(curNode); //  enqueue next node
+        nonVisited.erase(currFind);
+        map.push_back(curNode);
+      }
+    }
+    authorQueue.pop();
+  }
+
+  return map;
+}
+
+
