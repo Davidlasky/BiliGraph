@@ -79,17 +79,27 @@ void buildGraph::insertVideo(const string &videoFile) {
     for (unsigned int i = 0; i < authorsStr.size(); i++) {
       authors.push_back(stoi(authorsStr.at(i)));
     }
-
+    for (size_t i = 0; i < authors.size(); i++) {
+      dest_list.push_back(authors[i]);
+    }
     bGraph.insertEdge(otherInfo, authors);
   }
 }
 
 vector<int> buildGraph::BFS(int start) {
   //  Mark all nodes as not visited
-  vector<bool> visited; //
-  for (bool tmp : visited) {
-    tmp = false;
+  // vector<bool> visited(7, false); //
+
+  map<int, bool> node_visited;
+  for (size_t i = 0; i < dest_list.size(); i++) {
+    node_visited.insert({dest_list.at(i), false});
   }
+
+  /*
+    for (bool tmp : visited) {
+      tmp = false;
+    }
+  */
   //  initialize BFS
   queue<int> airportQueue;  //  queue for BFS
   queue<int> searchQueue;   //  order of nodes visited during BFS
@@ -102,11 +112,13 @@ vector<int> buildGraph::BFS(int start) {
     curr = airportQueue.front();
     for (auto it = bGraph.uidToNode[curr].neighbors.begin();
          it != bGraph.uidToNode[curr].neighbors.end();
-         it++) {                     //  search all neighbours from current node
-      if (!visited[it->first]) {     //  next node has not been visited
-        searchQueue.push(it->first); //  add node to BFS search
+         it++) { //  search all neighbours from current node
+      if (!node_visited.find(it->first)->second) {
+        // if (!visited[it->first]) {      //  next node has not been visited
+        searchQueue.push(it->first);  //  add node to BFS search
         airportQueue.push(it->first); //  enqueue next node
-        visited[it->first] = true;
+        node_visited.find(it->first)->second = true;
+        // visited[it->first] = true;
       }
     }
     airportQueue.pop();

@@ -24,6 +24,7 @@ public:
 
   // BFS
   vector<int> BFS(int start);
+  vector<int> dest_list;
 
 private:
   string authorFile_;
