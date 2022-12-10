@@ -84,40 +84,65 @@ void buildGraph::insertVideo(const string &videoFile) {
   }
 }
 
-vector<int> buildGraph::BFS(int start) {
-  //  Mark all nodes as not visited
-  vector<bool> visited; //
-  for (bool tmp : visited) {
-    tmp = false;
-  }
-  //  initialize BFS
-  queue<int> airportQueue;  //  queue for BFS
-  queue<int> searchQueue;   //  order of nodes visited during BFS
-  airportQueue.push(start); //  enqueue first airport
-  searchQueue.push(start);
-  int curr = start; //  current node being visited
 
-  //  BFS
-  while (!airportQueue.empty()) {
-    curr = airportQueue.front();
+vector<vector<int>> buildGraph::BFS(){
+  //for all starting nodes, generate it's corresponding BFS traverse map
+
+  //fill it with all nodes initially
+  vector<int> nonVisited;
+
+  map<int, node> graphMap = bGraph.uidToNode;
+  for(const auto &myPair: graphMap){
+    nonVisited.push_back(myPair.first);
+  }
+
+
+  vector<vector<int>> maps;
+
+  while(!nonVisited.empty()) {
+    int seed = nonVisited.back();
+    nonVisited.pop_back();
+    maps.push_back(BFS_helper(seed, nonVisited));
+  }
+ 
+  //  tansfer queue to vecotr and return
+  return maps;
+}
+
+
+
+vector<int> buildGraph::BFS_helper(int start, vector<int>& nonVisited) {
+
+  //  initialize BFS
+  queue<int> authorQueue;  //  queue for BFS
+  authorQueue.push(start);
+
+  //map stores: all bfs traversal nodes from that start point
+  vector<int> map;
+  map.push_back(start);
+
+  while (!authorQueue.empty()) {
+    int curr = authorQueue.front();
     for (auto it = bGraph.uidToNode[curr].neighbors.begin();
-         it != bGraph.uidToNode[curr].neighbors.end();
+        it != bGraph.uidToNode[curr].neighbors.end();
          it++) {                     //  search all neighbours from current node
-      if (!visited[it->first]) {     //  next node has not been visited
-        searchQueue.push(it->first); //  add node to BFS search
-        airportQueue.push(it->first); //  enqueue next node
-        visited[it->first] = true;
+
+      int curNode = it->first;
+      auto currFind = find(nonVisited.begin(), nonVisited.end(), curNode);
+      if (find(nonVisited.begin(), nonVisited.end(), curNode) != nonVisited.end()) {
+        //  next node has not been visited
+
+        //searchQueue.push(it->first); //  add node to BFS search
+        authorQueue.push(curNode); //  enqueue next node
+        nonVisited.erase(currFind);
+        map.push_back(curNode);
       }
     }
-    airportQueue.pop();
+    authorQueue.pop();
   }
 
-  //  tansfer queue to vecotr and return
-  vector<int> search;
-  while (!searchQueue.empty()) {
-    int ap = searchQueue.front();
-    search.push_back(ap);
-    searchQueue.pop();
-  }
-  return search;
+  return map;
 }
+
+
+

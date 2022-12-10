@@ -17,8 +17,12 @@ using namespace std;
 
 int main() {
 
+
+
   /* TEST_CASE 1 Check file read*/
   // check authorlist read
+
+  /*
   cout << "---------Test 1 : Check file read---------" << std::endl;
   buildGraph checkRead("../data/testreadauthor.csv",
                        "../data/testReadVideo.csv");
@@ -41,7 +45,7 @@ int main() {
   cout << "read same video list" << endl;
   cout << "read file test pass" << endl;
 
-
+*/
 
 
    // TEST 2: correlation videos between two people
@@ -71,6 +75,11 @@ int main() {
   cout << "Check neighbor passed!" << std::endl;
   cout << "----------------------------------------------------" << std::endl;
 
+
+
+
+  buildGraph wholeGraph("../data/authorData.csv", "../data/test.csv");
+  vector<vector<int>> bfs_mapping = wholeGraph.BFS();
 
 
 

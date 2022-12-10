@@ -23,7 +23,10 @@ public:
   buildHelper bGraph;
 
   // BFS
-  vector<int> BFS(int start);
+
+  vector<int> BFS_helper(int start, vector<int>& nonVisited);
+  vector<vector<int>> BFS();
+  //vector<int> nonVisited;
 
 private:
   string authorFile_;
