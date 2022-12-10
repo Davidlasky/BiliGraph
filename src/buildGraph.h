@@ -1,5 +1,8 @@
 #pragma once
 #include "buildHelper.h"
+#include "disjointset.h"
+
+#include <algorithm>
 #include <cassert>
 #include <fstream>
 #include <iostream>
@@ -24,14 +27,20 @@ public:
 
   // BFS
 
-  vector<int> BFS_helper(int start, vector<int>& nonVisited);
+  vector<int> BFS_helper(int start, vector<int> &nonVisited);
   vector<vector<int>> BFS();
 
+  // Kruskal
+  std::vector<Edge> KruskalMST();
 
 private:
   string authorFile_;
   string videoFile_;
 
+  vector<int> nodes_list;
+
   vector<string> SplitString(string &str1, char sep);
   std::string file_to_string(const std::string &filename);
 };
+
+bool compareEdges(Edge edge1, Edge edge2);

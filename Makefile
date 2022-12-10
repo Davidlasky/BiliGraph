@@ -5,10 +5,10 @@ CXX_FLAGS=-std=c++20 -Iincludes -g -fstandalone-debug -O0 -Wall -Wextra -Werror
 exec: bin/exec
 test: bin/test
 
-bin/exec: ./entry/main.cpp ./src/buildGraph.cpp ./src/buildHelper.cpp
+bin/exec: ./entry/main.cpp ./src/buildGraph.cpp ./src/buildHelper.cpp ./src/disjointset.cpp
 	$(CXX) $(CXX_FLAGS) $^ -o $@
 
-bin/test: ./tests/test.cpp ./src/buildGraph.cpp ./src/buildHelper.cpp
+bin/test: ./tests/test.cpp ./src/buildGraph.cpp ./src/buildHelper.cpp ./src/disjointset.cpp
 	$(CXX) $(CXX_FLAGS) $^ -o $@
 
 .DEFAULT_GOAL := exec

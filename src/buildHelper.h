@@ -16,4 +16,7 @@ public:
   void insertNode(vector<string> line);
   void insertEdge(vector<string> otherInfo, vector<int> authors);
   map<int, node> uidToNode; // link uid to node
+
+  // egdge_list for kruskal
+  vector<Edge> edges_list;
 };
