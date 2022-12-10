@@ -77,8 +77,10 @@ int main() {
 
 
 
+
   buildGraph wholeGraph("../data/authorData.csv", "../data/test.csv");
   vector<vector<int>> bfs_mapping = wholeGraph.BFS();
+
 
 
 }

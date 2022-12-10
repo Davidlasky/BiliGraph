@@ -85,8 +85,6 @@ void buildGraph::insertVideo(const string &videoFile) {
 }
 
 
-
-
 vector<vector<int>> buildGraph::BFS(){
   //for all starting nodes, generate it's corresponding BFS traverse map
 
@@ -145,5 +143,6 @@ vector<int> buildGraph::BFS_helper(int start, vector<int>& nonVisited) {
 
   return map;
 }
+
 
 
