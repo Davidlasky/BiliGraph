@@ -123,19 +123,18 @@ vector<int> buildGraph::BFS_helper(int start, vector<int>& nonVisited) {
 
   while (!authorQueue.empty()) {
     int curr = authorQueue.front();
-    for (auto it = bGraph.uidToNode[curr].neighbors.begin();
-        it != bGraph.uidToNode[curr].neighbors.end();
-         it++) {                     //  search all neighbours from current node
+    auto neighbor = bGraph.uidToNode[curr].neighbors;
+    for (auto it = neighbor.begin(); it != neighbor.end(); it++) {                    
+       //  search all neighbours from current node
 
-      int curNode = it->first;
-      auto currFind = find(nonVisited.begin(), nonVisited.end(), curNode);
-      if (find(nonVisited.begin(), nonVisited.end(), curNode) != nonVisited.end()) {
-        //  next node has not been visited
+      int curNeighbor = it->first;
+      auto currFind = find(nonVisited.begin(), nonVisited.end(), curNeighbor);
+      if (currFind != nonVisited.end()) {
+        //  neighbor in nonVisited - neighbor not visited yet
 
-        //searchQueue.push(it->first); //  add node to BFS search
-        authorQueue.push(curNode); //  enqueue next node
+        authorQueue.push(curNeighbor); //  enqueue next node
         nonVisited.erase(currFind);
-        map.push_back(curNode);
+        map.push_back(curNeighbor);
       }
     }
     authorQueue.pop();
