@@ -106,7 +106,6 @@ vector<vector<int>> buildGraph::BFS(){
     nonVisited.pop_back();
     maps.push_back(BFS_helper(seed, nonVisited));
   }
-  //  BFS
  
   //  tansfer queue to vecotr and return
   return maps;
@@ -119,6 +118,8 @@ vector<int> buildGraph::BFS_helper(int start, vector<int>& nonVisited) {
   //  initialize BFS
   queue<int> authorQueue;  //  queue for BFS
   authorQueue.push(start);
+
+  //map stores: all bfs traversal nodes from that start point
   vector<int> map;
   map.push_back(start);
 
@@ -130,7 +131,9 @@ vector<int> buildGraph::BFS_helper(int start, vector<int>& nonVisited) {
 
       int curNode = it->first;
       auto currFind = find(nonVisited.begin(), nonVisited.end(), curNode);
-      if (currFind != nonVisited.end()) {     //  next node has not been visited
+      if (find(nonVisited.begin(), nonVisited.end(), curNode) != nonVisited.end()) {
+        //  next node has not been visited
+
         //searchQueue.push(it->first); //  add node to BFS search
         authorQueue.push(curNode); //  enqueue next node
         nonVisited.erase(currFind);
