@@ -284,6 +284,12 @@ src/CMakeFiles/src.dir/buildGraph.cpp.o: ../src/buildGraph.cpp \
   /usr/include/aarch64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
   /usr/include/c++/11/iostream \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/debug/deque \
+  /usr/include/c++/11/bits/stl_queue.h \
   /usr/include/c++/11/set \
   /usr/include/c++/11/bits/stl_set.h \
   /usr/include/c++/11/bits/stl_multiset.h \
@@ -549,6 +555,18 @@ src/CMakeFiles/src.dir/buildHelper.cpp.o: ../src/buildHelper.cpp \
 /usr/include/c++/11/debug/set.h:
 
 /usr/include/c++/11/set:
+
+/usr/include/c++/11/bits/stl_queue.h:
+
+/usr/include/c++/11/debug/deque:
+
+/usr/include/c++/11/bits/deque.tcc:
+
+/usr/include/c++/11/bits/stl_deque.h:
+
+/usr/include/c++/11/deque:
+
+/usr/include/c++/11/queue:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
