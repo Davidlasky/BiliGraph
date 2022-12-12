@@ -30,6 +30,8 @@ public:
         coins(coins_) { /* nothing */
   }
 
+
+
   /**
    * Default constructor.
    */
@@ -93,9 +95,6 @@ public:
   }
 
 private:
-  // string author;
-  // double weight;
-
   // BVID
   vector<string> videos;
   vector<int> views;

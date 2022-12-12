@@ -17,10 +17,17 @@ void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
   vector<int> coins;
   coins.push_back(std::stoi(otherInfo.at(3)));
 
-  for (unsigned int i = 0; i < authors.size() - 1; i++) {
-    for (unsigned int j = i+1; j < authors.size(); j++) {
+  for (unsigned int i = 0; i < authors.size(); i++) {
+    for (unsigned int j = 0; j < authors.size(); j++) {
+
       source = authors.at(i);
       dest = authors.at(j);
+      
+      if(i == j) {
+        //break out if same author
+        continue;
+      }
+
 
       Edge e(source, dest, videos, views, likes, coins);
 
@@ -37,27 +44,5 @@ void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
     }
   }
 
-/*
-  //inverse!
-  for (unsigned int j = 0; j < authors.size() - 1; j++) {
-    for (unsigned int i = 1; i < authors.size(); i++) {
-      source = authors.at(i);
-      dest = authors.at(j);
-
-      Edge e(source, dest, videos, views, likes, coins);
-
-      if (uidToNode[source].neighbors.find(dest) ==
-          uidToNode[source].neighbors.end()) {
-        uidToNode[source].neighbors.insert(pair<int, Edge>(dest, e));
-      } else {
-        Edge& temp = uidToNode[source].neighbors[dest];
-        temp.addVideo(otherInfo.at(0));
-        temp.addViews(std::stoi(otherInfo.at(1)));
-        temp.addLikes(std::stoi(otherInfo.at(2)));
-        temp.addCoins(std::stoi(otherInfo.at(3)));
-      }
-    }
-  }
-*/
 
 }
