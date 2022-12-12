@@ -9,4 +9,7 @@ We use BFS.
 We use Kruskal. 
 
 ## MST 
-We use MST.
+We use MST. 
+
+## Betweenness Centrality 
+We use it.
