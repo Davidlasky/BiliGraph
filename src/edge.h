@@ -34,7 +34,8 @@ public:
    * Default constructor.
    */
   Edge()
-      : source(0), dest(0), videos(), views(), likes(), coins(), affects() { /* nothing */
+      : source(0), dest(0), videos(), views(), likes(), coins(),
+        affects() { /* nothing */
   }
 
   /**
@@ -53,8 +54,8 @@ public:
   pair<double, int> getWeight() const {
     double biggest = affects.at(0);
     int index = 0;
-    for(unsigned int i = 1; i < affects.size(); i++){
-      if(affects.at(i) > biggest){
+    for (unsigned int i = 1; i < affects.size(); i++) {
+      if (affects.at(i) > biggest) {
         biggest = affects.at(i);
         index = i;
       }
@@ -63,7 +64,6 @@ public:
     pair<double, int> out(biggest, index);
     return out;
   }
-
 
   /**
    * Compares two edges' source and dest.
@@ -85,29 +85,17 @@ public:
     return true;
   }
 
-  void addVideo(string video){
-    videos.push_back(video);
-  }
+  void addVideo(string video) { videos.push_back(video); }
 
-  void addViews(int view){
-    views.push_back(view);
-  }
+  void addViews(int view) { views.push_back(view); }
 
-  void addLikes(int like){
-    likes.push_back(like);
-  }
+  void addLikes(int like) { likes.push_back(like); }
 
-  void addCoins(int coin){
-    coins.push_back(coin);
-  }
+  void addCoins(int coin) { coins.push_back(coin); }
 
-  void addAffect(double affect){
-    affects.push_back(affect);
-  }
+  void addAffect(double affect) { affects.push_back(affect); }
 
-  vector<string> getVideos(){
-    return videos;
-  }
+  vector<string> getVideos() { return videos; }
 
 private:
   // string author;
