@@ -14,3 +14,8 @@ We use Kruskal to return a minimum spanning tree, which has the "minimum effecti
 We use it to look for who is the most/least socially active author.
 
 ## Test Cases 
+For BFS, we manually split out smaller csv files. For uploaders in this sample, we know that all 47 uploaders are all connected, so they should be in the same graph. Therefore, we test whether the graph size is 47 after BFS traversal.
+
+For MST, edges in our MST should have ascending weight (which is defined by the collaborated video that has best affect). Therefore, we check whether the weight of edges is increasing.
+
+For Betweeness Centrality, we find out the uploader with the highest centrality. We do notice that he collaborate with people from other video sections (music, life, etc), which makes him the "hub".
