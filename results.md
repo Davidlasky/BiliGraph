@@ -2,11 +2,11 @@
 
 ( ゜- ゜)つロ Cheers~
 
-##BFS  
+## BFS  
 We use BFS. 
 
-##Kruskal 
+## Kruskal 
 We use Kruskal. 
 
-##MST 
+## MST 
 We use MST.
