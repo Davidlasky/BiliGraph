@@ -5,7 +5,7 @@
 ## Project Proposal
 
 ### Leading Question 
-We will collect statistics on videos individually and jointly released by famous uploaders  on Bilibili(a video platform, Chinese version Youtube) through a third-party API, such as the number of views, uploading time, and number of coins, and output the dataset in the form of csv files. We will use the BFS algorithm to traverse the graph, then use Kruskal's Algorithm to find Minimum Spanning Tree, from which we will analyze the effectiveness of the videos jointly uploaded by Bilibili's Uploaders (specifically, we can see pairs of uploaders whose joint videos have the worst effect). We will also use Graphic output of a graph to visualize our graph(not exactly what to use yet, but we may use Bresenham algorithm).
+We will collect statistics on videos individually and jointly released by famous uploaders  on Bilibili(a video platform, Chinese version Youtube) through a third-party API, such as the number of views, uploading time, and number of coins, and output the dataset in the form of csv files. We will use the BFS algorithm to traverse the graph, then use Kruskal's Algorithm to find Minimum Spanning Tree, from which we will analyze the effectiveness of the videos jointly uploaded by Bilibili's Uploaders (specifically, we can see pairs of uploaders whose joint videos have the worst effect). We will also use Betweeness centrality to look for who is the most/least socially active author. 
 
 
 The rules of Bilibili: Each video on Bilibili has a coin function in addition to likes. Every user who has watched the video can choose to support the video with 0-2 coins. We will introduce a variable to analyze the attractiveness of the joint contribution video to the audience (we may use the ratio of the number of coins to the number of views).
@@ -49,7 +49,8 @@ Space complexity: O(V+E) where V is the information of uploaders and E is the ef
 
 ### Graph Algorithm 
 
-We decide to use BFS + Minimum Spanning Tree (Kruskal Algorithm) + Graphic output of a graph(not exactly sure what to use yet, but we may use Bresenham algorithm).
+We decide to use BFS + Minimum Spanning Tree (Kruskal Algorithm) + Betweenness centrality.
+
 
 #### Function Inputs:
 
@@ -57,16 +58,16 @@ For the graph building algorithm, the input would be string data of uploaders an
 
 As mentioned above, we would calculate the "effectiveness" based on number of plays, likes, and coins, as well as multiple videos from one author in other functions, so we won't include them as the input here. We will have helper functions that take in them as input, as well as maps between them.
 
-For BFS, MST algorithm and graphic visualization algorithm, we will just input our graph we create in previous functions. But we may also need helper functions (such as union find) where we may need other parameters such as vectors and maps.
+For BFS, MST algorithm and Betweeness centrality algorithm, we will just input our graph we create in previous functions. But we may also need helper functions (such as union find) where we may need other parameters such as vectors and maps.
 
 
 
 #### Function Outputs:
 For BFS traversal, it will traverse through the whole graph and we need a graph iterator.
 
-For the Kruskal Algorithm, it will return a minimum spanning tree, which has the "minimum effectiveness" (the minimum possible total edge weight) routes to every other node from a specific node. Kruskal Algorithm will be used to accomplish this result.  
+For the Kruskal Algorithm, it will return a minimum spanning tree, which has the "minimum effectiveness" (the minimum possible total edge weight) routes that connect all nodes. Kruskal Algorithm will be used to accomplish this result.  
 
-For Graphic output of a graph, it will output an PNG represent the effect of join uploading. 
+For Betweenness centrality, it is a measure of centrality in a graph based on shortest paths. So we are planning. Therefore, we are planning on using this algorithm to look for who is the most/least socially active author. 
 
 #### Function Efficiency:
 
@@ -74,7 +75,7 @@ For our graph, the time complexity of BFS is O(V + E) and space complexity is O(
 
 The time complexity of Kruskal's Algorithm is O(E*logE) and space complexity is O(V + E). 
 
-The time complexity of Bresenham algorithm is O(x2 – x1) and space complexity is O(1), but the visualization algorithm we use may subject to change.
+For Betweeness centrality, we will use Brandes algorithm. The time complexity is O(V*E + V^2*logV) and O(V + E) space complexity.
 
 
 
