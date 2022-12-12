@@ -1,8 +1,5 @@
 #pragma once
 #include "buildHelper.h"
-#include "disjointset.h"
-
-#include <algorithm>
 #include <cassert>
 #include <fstream>
 #include <iostream>
@@ -12,6 +9,10 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include "disjointset.h"
+
+
+
 class buildGraph {
 public:
   buildGraph(const string authorFile, const string videoFile);
@@ -27,17 +28,24 @@ public:
 
   // BFS
 
-  vector<int> BFS_helper(int start, vector<int> &nonVisited);
+  vector<int> BFS_helper(int start, vector<int>& nonVisited);
   vector<vector<int>> BFS();
+  
 
-  // Kruskal
-  std::vector<Edge> KruskalMST();
+  //MST
+  vector<vector<Edge>> Kruskal();
+  vector<Edge> Kruskal_helper(vector<int> travis);
+
+
+  //Dijkstra's Algorithm
+  map<int, int> shortestPath(vector<int> graph);
+  bool inVector(vector<int> vect, int temp);
+
+
 
 private:
   string authorFile_;
   string videoFile_;
-
-  vector<int> nodes_list;
 
   vector<string> SplitString(string &str1, char sep);
   std::string file_to_string(const std::string &filename);
