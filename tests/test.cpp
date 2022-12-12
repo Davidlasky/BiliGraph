@@ -18,8 +18,6 @@ using namespace std;
 
 
 
-
-
 int main() {
 
 
@@ -92,14 +90,15 @@ int main() {
   buildGraph wholeGraph("../data/authorData_small.csv", "../data/test_small.csv");
   vector<vector<int>> bfs_mapping = wholeGraph.BFS();
 
+
   //Betweeness centrality
   vector<int> bigMap = bfs_mapping.at(0);
   map<int, int> centeralness = wholeGraph.shortestPath(bigMap);
 
+
+
   //MST
   vector<vector<Edge>> kruskal = wholeGraph.Kruskal();
-
-
 
 
 }

@@ -25,16 +25,16 @@ public:
    * @param w - the weight of the edge
    */
   Edge(int u, int v, vector<string> videos_, vector<int> views_,
-       vector<int> likes_, vector<int> coins_)
+       vector<int> likes_, vector<int> coins_, vector<double> affects_)
       : source(u), dest(v), videos(videos_), views(views_), likes(likes_),
-        coins(coins_) { /* nothing */
+        coins(coins_), affects(affects_) { /* nothing */
   }
 
   /**
    * Default constructor.
    */
   Edge()
-      : source(0), dest(0), videos(), views(), likes(), coins() { /* nothing */
+      : source(0), dest(0), videos(), views(), likes(), coins(), affects() { /* nothing */
   }
 
   /**
@@ -50,7 +50,20 @@ public:
   /**
    * Gets edge weight.
    */
-  double getWeight() const { return this->videos.size(); }
+  pair<double, int> getWeight() const {
+    double biggest = affects.at(0);
+    int index = 0;
+    for(unsigned int i = 1; i < affects.size(); i++){
+      if(affects.at(i) > biggest){
+        biggest = affects.at(i);
+        index = i;
+      }
+    }
+
+    pair<double, int> out(biggest, index);
+    return out;
+  }
+
 
   /**
    * Compares two edges' source and dest.
@@ -88,17 +101,22 @@ public:
     coins.push_back(coin);
   }
 
+  void addAffect(double affect){
+    affects.push_back(affect);
+  }
+
   vector<string> getVideos(){
     return videos;
   }
 
 private:
   // string author;
-  // double weight;
+  double weight;
 
   // BVID
   vector<string> videos;
   vector<int> views;
   vector<int> likes;
   vector<int> coins;
+  vector<double> affects;
 };

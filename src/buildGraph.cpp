@@ -168,7 +168,7 @@ map<int, int> buildGraph::shortestPath(vector<int> graph){
         for (auto each: neighbor) {
           Edge currEdge = each.second;
           int currNode = each.first;
-          int currWeight = currEdge.getWeight() + lastWeight;
+          int currWeight = currEdge.getWeight().first + lastWeight;
           if (weighted.find(currNode) == weighted.end()) {
             weighted.insert(pair<int, int>(currNode, currWeight));
             path.insert(pair<int, int>(currNode, curr));
@@ -275,5 +275,5 @@ vector<Edge> buildGraph::Kruskal_helper(vector<int> travis) {
 
 // the compare function to compare two Edges by weights
 bool compareEdges(Edge edge1, Edge edge2) {
-  return edge1.getWeight() < edge2.getWeight();
+  return edge1.getWeight().first < edge2.getWeight().first;
 }
