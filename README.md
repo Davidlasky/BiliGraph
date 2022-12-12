@@ -3,6 +3,10 @@
 
 BiliGraph uses statistics on videos individually and jointly released by famous uploaders on Bilibili, then we analyze the effectiveness of jiontly-published videos.
 
+### Presentation Video
+https://www.youtube.com/watch?v=ThDQkzN7YWw
+
+
 ### Leading Question 
 We will collect statistics on videos individually and jointly released by famous uploaders on Bilibili(a video platform, Chinese version Youtube) through a third-party API, such as the number of views, uploading time, and number of coins, and output the dataset in the form of csv files. We will use the BFS algorithm to traverse the graph, then use Kruskal's Algorithm to find Minimum Spanning Tree, from which we will analyze the effectiveness of the videos jointly uploaded by Bilibili's Uploaders (specifically, we can see pairs of uploaders whose joint videos have the worst effect). We will also use Betweeness centrality to look for who is the most/least socially active author.
 
