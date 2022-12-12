@@ -15,6 +15,11 @@
 
 using namespace std;
 
+
+
+
+
+
 int main() {
 
 
@@ -48,15 +53,21 @@ int main() {
 */
 
 
+
+
+
+/*
    // TEST 2: correlation videos between two people
   cout << "-------Test 2: Check correlated videos between 2 people-------" << std::endl;
   buildGraph graph("../data/authorData_small.csv", "../data/test_small.csv");
   vector<string> corrVideos = {"BV1HF411T7oV", "BV1eY411P7kW", "BV1XZ4y1y7du", "BV1mY4y1H7wp","BV1QT4y1e79k"};
-  assert(graph.bGraph.uidToNode[13354765].neighbors[7552204].getVideos() == corrVideos);
+  //assert(graph.bGraph.uidToNode[13354765].neighbors[7552204].getVideos() == corrVideos);
+  vector<string> testVect = graph.bGraph.uidToNode[13354765].neighbors[7552204].getVideos();
+
   cout << "Correlation videos passed!!" << endl;
   std::string output = "";
-  for(unsigned int i = 0; i < corrVideos.size(); i++){
-    output += corrVideos.at(i);
+  for(unsigned int i = 0; i < testVect.size(); i++){
+    output += testVect.at(i);
     output += ",";
   }
   cout << "Videos are: " << output << std::endl;
@@ -74,12 +85,22 @@ int main() {
 
   cout << "Check neighbor passed!" << std::endl;
   cout << "----------------------------------------------------" << std::endl;
-
+*/
 
 
 
   buildGraph wholeGraph("../data/authorData.csv", "../data/test.csv");
   vector<vector<int>> bfs_mapping = wholeGraph.BFS();
+
+//MST
+  vector<vector<Edge>> kruskal = wholeGraph.Kruskal();
+
+  //Betweeness centrality
+  vector<int> bigMap = bfs_mapping.at(0);
+  wholeGraph.shortestPath(bigMap);
+
+  
+
 
 
 
