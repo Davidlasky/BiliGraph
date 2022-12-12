@@ -65,6 +65,8 @@ public:
     return out;
   }
 
+
+
   /**
    * Compares two edges' source and dest.
    * @param other - the edge to compare with
@@ -95,11 +97,14 @@ public:
 
   void addAffect(double affect) { affects.push_back(affect); }
 
+
+  vector<double> getAffect() {return affects;}
+
   vector<string> getVideos() { return videos; }
 
 private:
   // string author;
-  double weight;
+  //double weight;
 
   // BVID
   vector<string> videos;

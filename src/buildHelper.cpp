@@ -31,17 +31,6 @@ void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
       }
 
 
-
-      //if have both
-      //view of the highest / (average view1 + average view2);
-      
-
-      //if have one
-      //views/ average of that up
-
-      //if both are small
-      //views
-      
       vector<double> affects;
 
   
@@ -59,7 +48,6 @@ void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
 
       Edge e(source, dest, videos, views, likes, coins, affects); 
      
-    
 
       if (uidToNode[source].neighbors.find(dest) ==
           uidToNode[source].neighbors.end()) {
@@ -73,8 +61,10 @@ void buildHelper::insertEdge(vector<string> otherInfo, vector<int> authors) {
         temp.addCoins(std::stoi(otherInfo.at(3)));
 
         temp.addAffect(impact);
+      
       }
     }
+
   }
 
 

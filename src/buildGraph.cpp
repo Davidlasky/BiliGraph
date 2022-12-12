@@ -192,12 +192,10 @@ map<int, int> buildGraph::shortestPath(vector<int> graph){
           centerness[curr]++;
         }
       }
-      std::cout << i << ' ' << j << std::endl;
     }
   }
 
 
-  std::cout << "hi" << std::endl;
   return centerness;
 
 }
